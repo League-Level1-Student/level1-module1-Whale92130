@@ -18,7 +18,13 @@ public class Rocket implements GameControlScene {
 	boolean deccelerate = false;
 	boolean fire = false;
 	boolean restart = false;
-
+	
+	public Rocket() {
+		x = AsteroidsGame.WIDTH/2;
+		y = AsteroidsGame.HEIGHT/2;
+		size = 10;
+		collisionBox = new Rectangle(x - size / 2, y - size / 2, size, size);
+	}
 	/*
 	 * 2. A constructor does not have a return type and must be named the same as
 	 * the class i.e. public Rocket(){
