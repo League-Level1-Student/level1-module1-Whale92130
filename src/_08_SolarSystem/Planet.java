@@ -14,8 +14,11 @@ public class Planet {
     int avgDistFromSun = 1496 / 10;
     int orbitalPeriod = 365;
     Color color = Color.BLUE;
-    public Planet(int diameterPixels) {
+    public Planet(int diameterPixels, int avgDistanceFromSun, int OrbitalPeriod, Color color) {
         this.diameter = diameterPixels;
+        this.avgDistFromSun = avgDistanceFromSun;
+        this.orbitalPeriod = OrbitalPeriod;
+        this.color = color;
     }
 
     public void draw(Graphics g, int numDays) {
