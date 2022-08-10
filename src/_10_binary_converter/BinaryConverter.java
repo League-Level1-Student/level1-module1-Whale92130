@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -12,6 +13,11 @@ import javax.swing.JTextField;
 
 
 public class BinaryConverter implements ActionListener {
+	JFrame frame = new JFrame();
+	JPanel Panel = new JPanel();
+	JButton button = new JButton();
+	JLabel label = new JLabel();
+	JTextField answer = new JTextField(20);
 	String convert(String input) {
 	    if(input.length() != 8){
 	        JOptionPane.showMessageDialog(null, "Enter 8 bits, silly!!!");
@@ -33,23 +39,23 @@ public class BinaryConverter implements ActionListener {
 	}
 	void run() {
 		BinaryConverter binary = new BinaryConverter();
-		JFrame frame = new JFrame();
-		JPanel Panel = new JPanel();
-		JButton button = new JButton();
-		JTextField answer = new JTextField(20);
+		
 		button.addActionListener(this);
-		answer.
 		Panel.add(answer);
 		frame.add(Panel);
-		frame.add(button);
+		Panel.add(button);
+		button.setText("convert");
+		Panel.add(label);
+		answer.setVisible(true);
 		frame.pack();
-		frame.resize(200, 200);
+		frame.resize(400, 100);
 		frame.setVisible(true);
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		
+		label.setText(convert(answer.getText()));
 	}
 
 }
